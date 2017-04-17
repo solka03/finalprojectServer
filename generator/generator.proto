@@ -1,0 +1,19 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.finalproject";
+option java_outer_classname = "GeneratorProto";
+package generator;
+// The greeting service definition.
+service Greeter {
+    //generate UUIds
+     rpc GenerateUUIDs (RequireUuidCount) returns (UuidString) {}
+}
+
+// The request message containing the uuid
+message RequireUuidCount {
+  int32 count = 1;
+}
+// The response message containing the uuid list
+message UuidString {
+  string message = 1;
+}
