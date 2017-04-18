@@ -85,6 +85,7 @@ const _ = grpc.SupportPackageIsVersion4
 
 type GreeterClient interface {
 	// generate UUIds
+	// rpc SayHello (HelloRequest) returns (HelloReply) {}
 	GenerateUUIDs(ctx context.Context, in *RequireUuidCount, opts ...grpc.CallOption) (*UuidString, error)
 }
 
@@ -109,6 +110,7 @@ func (c *greeterClient) GenerateUUIDs(ctx context.Context, in *RequireUuidCount,
 
 type GreeterServer interface {
 	// generate UUIds
+	// rpc SayHello (HelloRequest) returns (HelloReply) {}
 	GenerateUUIDs(context.Context, *RequireUuidCount) (*UuidString, error)
 }
 

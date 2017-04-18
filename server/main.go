@@ -2,10 +2,10 @@ package main
 
 import (
 	"encoding/json"
+	pb "finalprojectServer/generator"
 	"fmt"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
-	pb "google.golang.org/grpc/examples/finalproject/generator"
 	"google.golang.org/grpc/reflection"
 	"log"
 	"net"
@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	port = ":50052"
+	port = ":50055"
 )
 
 // server is used to implement helloworld.GreeterServer.

@@ -1,1 +1,26 @@
 # protoc -I generator/ generator/generator.proto --go_out=plugins=grpc:generator
+#go run server/main.go
+
+
+FROM golang:1.8
+
+# copy our application code
+RUN mkdir -p /go/src/app/uuid-server
+WORKDIR /go/src/app/uuid-server
+
+ADD . /go/src/app/uuid-server
+WORKDIR /go/src/app/uuid-server
+
+# tell the port number the container should expose
+EXPOSE 50053
+
+# run the command to install grpc
+RUN go get google.golang.org/grpc
+
+#install protoc
+#RUN go get -u github.com/golang/protobuf/{proto,protoc-gen-go}
+
+#export Go path
+RUN export PATH=$PATH:$GOPATH/bin
+
+RUN go run server/main.go

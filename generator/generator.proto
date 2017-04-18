@@ -6,6 +6,7 @@ package generator;
 // The greeting service definition.
 service Greeter {
     //generate UUIds
+     //rpc SayHello (HelloRequest) returns (HelloReply) {}
      rpc GenerateUUIDs (RequireUuidCount) returns (UuidString) {}
 }
 
@@ -17,3 +18,14 @@ message RequireUuidCount {
 message UuidString {
   string message = 1;
 }
+
+
+// The request message containing the user's name.
+//message HelloRequest {
+//  string name = 1;
+//}
+
+// The response message containing the greetings
+//message HelloReply {
+//  string message = 1;
+//}
