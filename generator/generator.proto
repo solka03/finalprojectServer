@@ -1,6 +1,6 @@
 syntax = "proto3";
 option java_multiple_files = true;
-option java_package = "io.grpc.examples.finalproject";
+option java_package = "io.grpc.examples.finalprojectClient";
 option java_outer_classname = "GeneratorProto";
 package generator;
 // The greeting service definition.
